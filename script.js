@@ -1,9 +1,14 @@
 const container = document.querySelector("#container");
 const inputContainerSize = document.querySelector("#inputContainerSize");
 const inputEdgeLength = document.querySelector("#inputEdgeLength");
+let cubes;
 
 let edgeLength = 16;
 let containerSize = 500;
+
+function getCubes() {
+    return document.querySelectorAll(".cube");
+}
 
 inputContainerSize.addEventListener("keydown", (event) => {
     const keyname = event.key;
@@ -36,6 +41,7 @@ function drawPixel(edgeLengthInCubes = edgeLength) {
 
     for (let i = 0; i < sizeInCubes; i++) {
         const cube = document.createElement("div");
+        cube.classList.add("cube");
         cube.style.height = cubeHeight;
         cube.style.width = cubeWidth;
         console.log("Container height: " + container.scrollHeight);
@@ -44,6 +50,8 @@ function drawPixel(edgeLengthInCubes = edgeLength) {
         console.log("Cube width: " + cube.style.width);
         container.appendChild(cube);
     }
+
+    cubes = getCubes();
 }
 
 function drawContainer(sizeInPixel = containerSize) {
