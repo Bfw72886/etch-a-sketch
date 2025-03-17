@@ -5,9 +5,14 @@
 }
 
 :root {
+    --body-bg: white;
     --container-bg: white;
     --cube-bg: cornflowerblue;
     --hover-bg: crimson;
+}
+
+body {
+    background-color: var(--body-bg);
 }
 
 #container {
