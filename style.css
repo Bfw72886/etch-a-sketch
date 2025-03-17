@@ -5,14 +5,19 @@
 }
 
 :root {
-    --body-bg: white;
+    --body-bg: lavender;
     --container-bg: white;
-    --cube-bg: cornflowerblue;
+    --cube-bg: rgb(177, 177, 254);
     --hover-bg: crimson;
 }
 
 body {
     background-color: var(--body-bg);
+    padding: 8px;
+}
+
+#menu {
+    margin-bottom: 8px;
 }
 
 #container {
@@ -26,8 +31,4 @@ body {
 .cube {
     background-color: var(--cube-bg);
     border: 1px solid var(--container-bg);
-}
-
-.hovered {
-    background-color: var(--hover-bg);
 }
