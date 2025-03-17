@@ -1,3 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --container-bg: white;
+}
+
 #container {
     display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+    background-color: var(--container-bg);
+}
+
+#container div {
+    background-color: cornflowerblue;
+    border: 2px solid var(--container-bg);
 }
