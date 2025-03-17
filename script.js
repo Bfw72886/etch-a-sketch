@@ -18,17 +18,26 @@ inputContainerSize.addEventListener("keydown", (event) => {
         console.log("Containersize: " + containerSize);
         drawContainer();
     }
-})
+});
 
 inputEdgeLength.addEventListener("keydown", (event) => {
     const keyname = event.key;
 
     if (keyname === "Enter") {
         edgeLength = inputEdgeLength.value;
+        if (edgeLength > 100) {
+            edgeLength = 100;
+        }
         console.log("Edgelength: " + edgeLength);
         drawContainer();
     }
-})
+});
+
+container.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("cube")) {
+        event.target.classList.add("hovered");
+    }
+});
 
 function drawPixel(edgeLengthInCubes = edgeLength) {
     while (container.hasChildNodes()) {
