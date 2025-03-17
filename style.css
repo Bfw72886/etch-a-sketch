@@ -6,6 +6,7 @@
 
 :root {
     --container-bg: white;
+    --cube-bg: cornflowerblue;
 }
 
 #container {
@@ -17,6 +18,6 @@
 }
 
 #container div {
-    background-color: cornflowerblue;
+    background-color: var(--cube-bg);
     border: 2px solid var(--container-bg);
 }
