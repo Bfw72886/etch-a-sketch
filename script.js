@@ -9,7 +9,6 @@ let edgeLengthLimit = inputEdgeLengthLimit.value;
 
 inputContainerSize.addEventListener("focusout", () => {
     containerSize = inputContainerSize.value;
-    console.log("Containersize: " + containerSize);
     drawContainer();
 })
 
@@ -18,7 +17,6 @@ inputEdgeLength.addEventListener("focusout", () => {
     if (edgeLength > edgeLengthLimit) {
         edgeLength = edgeLengthLimit;
     }
-    console.log("Edgelength: " + edgeLength);
     drawContainer();
 })
 
@@ -48,16 +46,11 @@ function drawPixel(edgeLengthInCubes = edgeLength) {
         cube.classList.add("cube");
         cube.style.height = cubeHeight;
         cube.style.width = cubeWidth;
-        console.log("Container height: " + container.scrollHeight);
-        console.log("Cube height: " + cube.style.height);
-        console.log("Container width: " + container.scrollWidth);
-        console.log("Cube width: " + cube.style.width);
         container.appendChild(cube);
     }
 }
 
 function drawContainer(sizeInPixel = containerSize) {
-    console.log("Container drawn");
     container.style.height = sizeInPixel + "px";
     container.style.width = sizeInPixel + "px";
     drawPixel();
