@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 const inputContainerSize = document.querySelector("#inputContainerSize");
+const inputEdgeLength = document.querySelector("#inputEdgeLength");
 
 let edgeLength = 16;
 let containerSize = 500;
@@ -14,7 +15,17 @@ inputContainerSize.addEventListener("keydown", (event) => {
     }
 })
 
-function drawPixel(edgeLengthInCubes) {
+inputEdgeLength.addEventListener("keydown", (event) => {
+    const keyname = event.key;
+
+    if (keyname === "Enter") {
+        edgeLength = inputEdgeLength.value;
+        console.log("Edgelength: " + edgeLength);
+        drawContainer();
+    }
+})
+
+function drawPixel(edgeLengthInCubes = edgeLength) {
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
@@ -39,7 +50,7 @@ function drawContainer(sizeInPixel = containerSize) {
     console.log("Container drawn");
     container.style.height = sizeInPixel + "px";
     container.style.width = sizeInPixel + "px";
-    drawPixel(edgeLength);
+    drawPixel();
 } 
 
 
