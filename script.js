@@ -1,10 +1,12 @@
 const container = document.querySelector("#container");
 const inputContainerSize = document.querySelector("#inputContainerSize");
 const inputEdgeLength = document.querySelector("#inputEdgeLength");
+const inputEdgeLengthLimit = document.querySelector("#inputEdgeLengthLimit");
 let cubes;
 
 let edgeLength = 16;
 let containerSize = 500;
+let edgeLengthLimit = inputEdgeLengthLimit.value;
 
 function getCubes() {
     return document.querySelectorAll(".cube");
@@ -25,13 +27,15 @@ inputEdgeLength.addEventListener("keydown", (event) => {
 
     if (keyname === "Enter") {
         edgeLength = inputEdgeLength.value;
-        if (edgeLength > 100) {
-            edgeLength = 100;
+        if (edgeLength > edgeLengthLimit) {
+            edgeLength = edgeLengthLimit;
         }
         console.log("Edgelength: " + edgeLength);
         drawContainer();
     }
 });
+
+inputEdgeLengthLimit.addEventListener("change", () => edgeLengthLimit = inputEdgeLengthLimit.value);
 
 container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("cube")) {
