@@ -2,17 +2,10 @@ const container = document.querySelector("#container");
 const inputContainerSize = document.querySelector("#inputContainerSize");
 const inputEdgeLength = document.querySelector("#inputEdgeLength");
 const inputEdgeLengthLimit = document.querySelector("#inputEdgeLengthLimit");
-const inputBodyBackground = document.querySelector("#inputBodyBackground");
-let cubes;
-const root = document.querySelector(":root");
 
 let edgeLength = inputEdgeLength.value;
 let containerSize = inputContainerSize.value;
 let edgeLengthLimit = inputEdgeLengthLimit.value;
-
-function getCubes() {
-    return document.querySelectorAll(".cube");
-}
 
 inputContainerSize.addEventListener("focusout", () => {
     containerSize = inputContainerSize.value;
@@ -30,9 +23,6 @@ inputEdgeLength.addEventListener("focusout", () => {
 })
 
 inputEdgeLengthLimit.addEventListener("focusout", () => edgeLengthLimit = inputEdgeLengthLimit.value);
-
-// TODO not working yet
-inputBodyBackground.addEventListener("focusout", () => getComputedStyle(root).setProperty("--body-bg", inputBodyBackground.value));
 
 container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("cube")) {
@@ -60,8 +50,6 @@ function drawPixel(edgeLengthInCubes = edgeLength) {
         console.log("Cube width: " + cube.style.width);
         container.appendChild(cube);
     }
-
-    cubes = getCubes();
 }
 
 function drawContainer(sizeInPixel = containerSize) {
