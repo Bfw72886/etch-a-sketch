@@ -4,8 +4,8 @@ const inputEdgeLength = document.querySelector("#inputEdgeLength");
 const inputEdgeLengthLimit = document.querySelector("#inputEdgeLengthLimit");
 let cubes;
 
-let edgeLength = 16;
-let containerSize = 500;
+let edgeLength = inputEdgeLength.value;
+let containerSize = inputContainerSize.value;
 let edgeLengthLimit = inputEdgeLengthLimit.value;
 
 function getCubes() {

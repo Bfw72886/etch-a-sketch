@@ -10,13 +10,13 @@
 <body>
     <div id="menu">
         <label for="inputContainerSize">Size of canvas:</label>
-        <input id="inputContainerSize" type="text" placeholder="500">
+        <input type="number" id="inputContainerSize" value="500" step="100">
         <br>
         <label for="inputEdgeLength">Edgelength in cubes:</label>
-        <input id="inputEdgeLength" type="text" placeholder="16">
+        <input type="number" id="inputEdgeLength" value="16">
         <br>
         <label for="inputEdgeLengthLimit">Edgelength Limit (may result in lag, 1-100):</label>
-        <input type="number" name="inputEdgeLengthLimit" id="inputEdgeLengthLimit" value="32" max="100">
+        <input type="number" id="inputEdgeLengthLimit" value="32" max="100">
     </div>
     <div id="container"></div>
 </body>
