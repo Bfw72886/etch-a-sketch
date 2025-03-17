@@ -26,7 +26,11 @@ inputEdgeLengthLimit.addEventListener("focusout", () => edgeLengthLimit = inputE
 
 container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("cube")) {
-        event.target.classList.add("hovered");
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+
+        event.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
     }
 });
 
