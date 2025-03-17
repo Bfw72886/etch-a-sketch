@@ -12,30 +12,22 @@ function getCubes() {
     return document.querySelectorAll(".cube");
 }
 
-inputContainerSize.addEventListener("keydown", (event) => {
-    const keyname = event.key;
+inputContainerSize.addEventListener("focusout", () => {
+    containerSize = inputContainerSize.value;
+    console.log("Containersize: " + containerSize);
+    drawContainer();
+})
 
-    if (keyname === "Enter") {
-        containerSize = inputContainerSize.value;
-        console.log("Containersize: " + containerSize);
-        drawContainer();
+inputEdgeLength.addEventListener("focusout", () => {
+    edgeLength = inputEdgeLength.value;
+    if (edgeLength > edgeLengthLimit) {
+        edgeLength = edgeLengthLimit;
     }
-});
+    console.log("Edgelength: " + edgeLength);
+    drawContainer();
+})
 
-inputEdgeLength.addEventListener("keydown", (event) => {
-    const keyname = event.key;
-
-    if (keyname === "Enter") {
-        edgeLength = inputEdgeLength.value;
-        if (edgeLength > edgeLengthLimit) {
-            edgeLength = edgeLengthLimit;
-        }
-        console.log("Edgelength: " + edgeLength);
-        drawContainer();
-    }
-});
-
-inputEdgeLengthLimit.addEventListener("change", () => edgeLengthLimit = inputEdgeLengthLimit.value);
+inputEdgeLengthLimit.addEventListener("focusout", () => edgeLengthLimit = inputEdgeLengthLimit.value);
 
 container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("cube")) {
